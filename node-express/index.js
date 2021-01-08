@@ -7,10 +7,13 @@ const hostname = 'localhost';
 const port = 3000;
 
 const app = express();
+const dishRouter = require('./routes/dishRouter');
 
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
+
+app.use('/dishes', dishRouter);
 
 
 app.all('/dishes', (req,res,next) => {
