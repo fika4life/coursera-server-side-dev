@@ -8,12 +8,14 @@ const port = 3000;
 
 const app = express();
 const dishRouter = require('./routes/dishRouter');
+const promoRouter = require('./routes/promoRouter');
 
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
 app.use('/dishes', dishRouter);
+app.use('/promotions', promoRouter);
 
 const server = http.createServer(app);
 
