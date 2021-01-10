@@ -25,7 +25,7 @@ promoRouter.route('/')
 })
 .delete((req, res) => {
   
-    res.send("Deleting all dishes");
+    res.send("Deleting all promotions");
 });
 
 
@@ -42,13 +42,13 @@ promoRouter.route('/:id')
 })
 .post((req, res) => {
     res.status(403);
-    res.send("POST on dishes/" + req.params.id + " not allowed");
+    res.send("POST on promotions/" + req.params.id + " not allowed");
 })
 .put((req,res) => {
     res.send("Updating promo with id: " + req.params.id + " with name: " + req.body.name + " and description: " + req.body.description);
 })
 .delete((req, res) => {
-    res.send("Deleting dish with id:" + req.params.id);
+    res.send("Deleting promo with id:" + req.params.id);
 });
 
 module.exports = promoRouter;
